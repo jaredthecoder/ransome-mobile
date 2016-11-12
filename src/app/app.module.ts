@@ -6,6 +6,9 @@ import { ProfilePage } from '../pages/profile/profile';
 import { HomePage } from '../pages/home/home';
 import { GroupActionPage } from '../pages/groupaction/groupaction';
 import { TabsPage } from '../pages/tabs/tabs';
+import { RegistrationPage } from '../pages/registration/registration';
+import { LoginPage } from '../pages/login/login';
+import { LandingPage } from '../pages/landing/landing';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { TabsPage } from '../pages/tabs/tabs';
     ProfilePage,
     GroupActionPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    RegistrationPage,
+    LoginPage,
+    LandingPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -25,8 +31,15 @@ import { TabsPage } from '../pages/tabs/tabs';
     GoalsPage,
     ProfilePage,
     HomePage,
+<<<<<<< HEAD
+    TabsPage,
+    RegistrationPage,
+    LoginPage,
+    LandingPage
+=======
     GroupActionPage,
     TabsPage
+>>>>>>> 335f007db57f5b646f527f3ab577b50ab300aea8
   ],
   providers: []
 })

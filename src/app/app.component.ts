@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { TabsPage } from '../pages/tabs/tabs';
+import { LandingPage } from '../pages/landing/landing';
 
 
 @Component({
@@ -10,9 +10,13 @@ import { TabsPage } from '../pages/tabs/tabs';
 })
 
 export class MyApp {
+<<<<<<< HEAD
+  rootPage = LandingPage;
+=======
     @ViewChild(Nav) nav: Nav;
 
     rootPage = TabsPage;
+>>>>>>> 335f007db57f5b646f527f3ab577b50ab300aea8
 
     constructor(platform: Platform) {
         platform.ready().then(() => {
