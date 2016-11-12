@@ -11,7 +11,7 @@
 
       <ion-item>
         <ion-label floating>Group Name</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="groupName"></ion-input>
       </ion-item>
 
     </ion-list>
@@ -19,6 +19,8 @@
     <div padding>
       <button ion-button color="primary" (click)="joinExistingGroup()" block>Join Existing Group</button>
     </div>
+
+    <h3 class="text-center">Or</h3>
 
     <div padding>
       <button ion-button color="primary" (click)="createGroup()" block>Create Group</button>
