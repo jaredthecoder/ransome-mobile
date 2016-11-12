@@ -9,8 +9,15 @@ import { NavController, NavParams } from 'ionic-angular';
 
 export class GroupActionPage {
 
-  constructor(public navCtrl: NavController, private navParams: NavParams) {
+    constructor(public navCtrl: NavController, private navParams: NavParams) {
+    }
 
-  }
+    createGroup() {
+        
+    }
+
+    joinExistingGroup() {
+        
+    }
 
 }
