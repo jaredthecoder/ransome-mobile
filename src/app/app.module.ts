@@ -5,6 +5,7 @@ import { GoalsPage } from '../pages/goals/goals';
 import { ProfilePage } from '../pages/profile/profile';
 import { HomePage } from '../pages/home/home';
 import { GroupActionPage } from '../pages/groupaction/groupaction';
+import { GroupCreateModalPage } from '../pages/groupcreatemodal/groupcreatemodal';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RegistrationPage } from '../pages/registration/registration';
 import { LoginPage } from '../pages/login/login';
@@ -20,7 +21,8 @@ import { LandingPage } from '../pages/landing/landing';
     TabsPage,
     RegistrationPage,
     LoginPage,
-    LandingPage
+    LandingPage,
+    GroupCreateModalPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -31,11 +33,12 @@ import { LandingPage } from '../pages/landing/landing';
     GoalsPage,
     ProfilePage,
     HomePage,
-    TabsPage,
     RegistrationPage,
     LoginPage,
     LandingPage,
-    GroupActionPage
+    GroupActionPage,
+    GroupCreateModalPage,
+    TabsPage
   ],
   providers: []
 })
