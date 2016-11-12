@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.telerik.plugins.healthkit"
+        version="0.5.1">
+
+  <name>HealthKit</name>
+
+  <description>
+    Interact with the iOS8 HealthKit SDK
+  </description>
+
+  <author>Eddy Verbruggen / Telerik</author>
+
+  <license>MIT</license>
+
+  <keywords>Health, HealthKit, Fit, Fitness, Birthdate, Gender, Height, Weight, Workout</keywords>
+
+  <repo>https://github.com/Telerik-Verified-Plugins/HealthKit.git</repo>
+
+  <issue>https://github.com/Telerik-Verified-Plugins/HealthKit/issues</issue>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+  </engines>
+
+  <js-module src="www/HealthKit.js" name="HealthKit">
+    <clobbers target="window.plugins.healthkit" />
+  </js-module>
+
+  <!-- ios -->
+  <platform name="ios">
+
+    <config-file target="config.xml" parent="/*">
+      <feature name="HealthKit">
+        <param name="ios-package" value="HealthKit"/>
+      </feature>
+    </config-file>
+
+    <!-- commented this because it means you can't use the app on iPad -->
+    <!--config-file target="*-Info.plist" parent="UIRequiredDeviceCapabilities">
+      <array>
+        <string>healthkit</string>
+      </array>
+    </config-file-->
+
+    <!-- Usage description of Health, mandatory since iOS 10 -->
+    <config-file target="*-Info.plist" parent="NSHealthShareUsageDescription">
+      <string/>
+    </config-file>
+    <config-file target="*-Info.plist" parent="NSHealthUpdateUsageDescription">
+      <string/>
+    </config-file>
+
+    <header-file src="src/ios/WorkoutActivityConversion.h"/>
+    <source-file src="src/ios/WorkoutActivityConversion.m"/>
+    <header-file src="src/ios/HKHealthStore+AAPLExtensions.h"/>
+    <source-file src="src/ios/HKHealthStore+AAPLExtensions.m"/>
+    <header-file src="src/ios/HealthKit.h"/>
+    <source-file src="src/ios/HealthKit.m"/>
+
+    <framework src="HealthKit.framework" weak="true" />
+  </platform>
+
+</plugin>
