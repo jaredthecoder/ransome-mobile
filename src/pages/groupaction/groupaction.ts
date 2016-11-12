@@ -25,6 +25,7 @@ export class GroupActionPage {
     createGroup() {
         let groupModal = this.modalCtrl.create(GroupCreateModalPage);
         groupModal.onDidDismiss(data => {
+            console.log(data);
             // POST to API the group info
         });
         groupModal.present();

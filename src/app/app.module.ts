@@ -10,6 +10,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { RegistrationPage } from '../pages/registration/registration';
 import { LoginPage } from '../pages/login/login';
 import { LandingPage } from '../pages/landing/landing';
+import { NotificationPage } from '../pages/notification/notification';
+import { GroupsPage } from '../pages/groups/groups';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { LandingPage } from '../pages/landing/landing';
     RegistrationPage,
     LoginPage,
     LandingPage,
-    GroupCreateModalPage
+    GroupCreateModalPage,
+    NotificationPage,
+    GroupsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -38,6 +42,8 @@ import { LandingPage } from '../pages/landing/landing';
     LandingPage,
     GroupActionPage,
     GroupCreateModalPage,
+    NotificationPage,
+    GroupsPage,
     TabsPage
   ],
   providers: []

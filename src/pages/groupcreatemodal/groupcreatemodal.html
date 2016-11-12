@@ -20,7 +20,12 @@
 
 <ion-content>
  <ion-item>
-    <ion-label color="primary" fixed>Name</ion-label>
-    <ion-input type="text" placeholder="Group"></ion-input>
+    <ion-label color="primary" fixed>Group Name</ion-label>
+    <ion-input type="text" placeholder="Coworker Lunch Bunch" [(ngModel)]="groupName"></ion-input>
   </ion-item>
+
+    <div padding>
+      <button ion-button color="primary" (click)="dismiss()" block>Create Group</button>
+    </div>
+
 </ion-content>
