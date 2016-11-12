@@ -10,13 +10,8 @@ import { LandingPage } from '../pages/landing/landing';
 })
 
 export class MyApp {
-<<<<<<< HEAD
-  rootPage = LandingPage;
-=======
+    rootPage = LandingPage;
     @ViewChild(Nav) nav: Nav;
-
-    rootPage = TabsPage;
->>>>>>> 335f007db57f5b646f527f3ab577b50ab300aea8
 
     constructor(platform: Platform) {
         platform.ready().then(() => {

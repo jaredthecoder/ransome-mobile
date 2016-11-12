@@ -31,15 +31,11 @@ import { LandingPage } from '../pages/landing/landing';
     GoalsPage,
     ProfilePage,
     HomePage,
-<<<<<<< HEAD
     TabsPage,
     RegistrationPage,
     LoginPage,
-    LandingPage
-=======
-    GroupActionPage,
-    TabsPage
->>>>>>> 335f007db57f5b646f527f3ab577b50ab300aea8
+    LandingPage,
+    GroupActionPage
   ],
   providers: []
 })
