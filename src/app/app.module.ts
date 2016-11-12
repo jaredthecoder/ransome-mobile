@@ -5,6 +5,7 @@ import { GoalsPage } from '../pages/goals/goals';
 import { ProfilePage } from '../pages/profile/profile';
 import { HomePage } from '../pages/home/home';
 import { GroupActionPage } from '../pages/groupaction/groupaction';
+import { GroupCreateModalPage } from '../pages/groupcreatemodal/groupcreatemodal';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RegistrationPage } from '../pages/registration/registration';
 import { LoginPage } from '../pages/login/login';
@@ -34,7 +35,7 @@ import { LandingPage } from '../pages/landing/landing';
     HomePage,
     RegistrationPage,
     LoginPage,
-    LandingPage
+    LandingPage,
     GroupActionPage,
     GroupCreateModalPage,
     TabsPage
