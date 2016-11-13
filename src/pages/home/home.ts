@@ -12,16 +12,14 @@ import { NavController } from 'ionic-angular';
 export class HomePage {
 
    @ViewChild('groupName') groupName: ElementRef;
-   @ViewChild('currentProgress') currentProgress: ElementRef;
-   @ViewChild('totalGoal') totalGoal: ElementRef;
+   @ViewChild('groupStatus') groupStatus: ElementRef;
 
   constructor(public navCtrl: NavController) {
   }
 
   ngOnInit() {
     this.groupName.nativeElement.innerHTML = 'CS Peeps';
-    this.currentProgress.nativeElement.innerHTML = '20';
-    this.totalGoal.nativeElement.innerHTML = '100';
+    this.groupStatus.nativeElement.innerHTML = '10' + '/' + '20';
     console.log('Testing!');
   }
 

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+      <ion-title><img style="padding-top: 10px;" src="assets/images/logo.png" alt="Ransome"></ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -9,7 +9,12 @@
         <button ion-fab (click)="openGroupActionPage()"><ion-icon name="add"></ion-icon></button>
     </ion-fab>
 
-    <h2 class="text-center" #groupName></h2>
-    <h3 class="text-center" #currentProgress></h3><h3 class="text-center">/</h3><h3 class="text-center" #totalGoal></h3>
+    <div class='outer-div'>
+      <div class='middle-div'>
+        <h2 class="text-center name" #groupName></h2>
+        <h3 class="text-center status" #groupStatus></h3>
+        <h3 class="text-center steps">steps</h3>
+      </div>
+    </div>
 
 </ion-content>

@@ -2,6 +2,53 @@ page-home {
 
 }
 
+.circleBase {
+    border-radius: 50%;
+}
+
+.circleStyle {
+    background: #61bc62;
+}
+
+div.outer-div {
+  height: 100%;
+  width: 100%;
+}
+
+div.middle-div {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 .text-center {
     text-align: center;
+}
+
+.center-div {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+
+.status {
+    font-size: 100px;
+    color: #16a049;
+}
+
+.steps {
+    font-size: 40px;
+}
+
+.name {
+    font-size: 40px;
 }

@@ -3,6 +3,23 @@
 @import "ionic.globals";
 
 
+@font-face {
+    font-family: DINItalicsBold;
+    font-weight: bold;
+    src: url("../assets/DINItalicsBold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: DINBold;
+    font-weight: bold;
+    src: url("../assets/DINBold.otf") format("opentype");
+}
+
+* {
+    font-family: "DINBold", Sans-serif;
+}
+
+
 // Shared Variables
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override
