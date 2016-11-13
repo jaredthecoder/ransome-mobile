@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { GroupActionPage } from '../groupaction/groupaction';
-import { NavController } from 'ionic-angular';
+import { Platform, NavController } from 'ionic-angular';
 // import { ProgressBar } from 'progressbar.js';
 
 
@@ -17,7 +17,7 @@ export class HomePage {
    @ViewChild('groupName') groupName: ElementRef;
    @ViewChild('groupStatus') groupStatus: ElementRef;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public platform: Platform) {
       setTimeout(() => {
         this.checkGoals();
       }, 10000);
@@ -36,18 +36,20 @@ export class HomePage {
 
   checkGoals() {
     // Get list of goals you have
-    console.log('Check goals');
-   var successHandler = function (pedometerData) {
-        console.log(pedometerData.numberOfSteps);
-        console.log(pedometerData.distance);
-    };
-    var options = {
-        "startDate": new Date("Fri Nov 11 2016 15:20:00"),
-        "endDate": new Date("Sat Nov 12 2016 15:25:00")
-    };
-    Pedometer.queryData(successHandler, options); 
-    console.log('after querying pedometer');
+        this.platform.ready().then(() => {
+                console.log('Check goals');
 
+               var successHandler = function (pedometerData) {
+                    console.log(pedometerData.numberOfSteps);
+                    console.log(pedometerData.distance);
+                };
+                var options = {
+                    "startDate": new Date("Fri Nov 11 2016 15:20:00"),
+                    "endDate": new Date("Sat Nov 12 2016 15:25:00")
+                };
+                //Pedometer.queryData(successHandler, options); 
+                console.log('after querying pedometer');
+        });
   }
 
   openGroupActionPage() {

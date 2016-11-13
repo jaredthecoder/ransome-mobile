@@ -45,8 +45,8 @@ export class LoginPage {
             this.storage.set('userUUID', response.data.uuid);
             console.log('Pushing new page on');
             this.navCtrl.push(TabsPage);
-        }.bind(this))
-        .catch(function (error) {
+        }.bind(this));
+        /*.catch(function (error) {
             console.log('Throwing error');
             console.log(error);
             let alertUser = this.alertCtrl.create({
@@ -55,6 +55,6 @@ export class LoginPage {
               buttons: ['Try Again']
             });
             alertUser.present();
-        }.bind(this));
+        }.bind(this));*/
     }
 }
