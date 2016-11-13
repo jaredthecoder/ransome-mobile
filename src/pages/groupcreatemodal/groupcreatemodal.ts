@@ -33,8 +33,7 @@ export class GroupCreateModalPage {
           .then(
             data => {
                 var config = { 'headers': {'Token': token}};
-                let url = "http://10.67.48.90:8000/group";
-
+                let url = "get-ranso.me/group";
 
                 axios.post(url, uuidRequest, config).then(function(response)
                         {uuid = response.data.uuid}.bind(this));
