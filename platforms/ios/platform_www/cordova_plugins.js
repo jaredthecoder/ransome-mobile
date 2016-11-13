@@ -56,6 +56,14 @@ module.exports = [
         "clobbers": [
             "window.plugins.healthkit"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-pedometer/www/pedometer.js",
+        "id": "cordova-plugin-pedometer.Pedometer",
+        "pluginId": "cordova-plugin-pedometer",
+        "clobbers": [
+            "pedometer"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -67,7 +75,8 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.2.0",
     "cordova-plugin-whitelist": "1.3.0",
     "ionic-plugin-keyboard": "2.2.1",
-    "com.telerik.plugins.healthkit": "0.5.1"
+    "com.telerik.plugins.healthkit": "0.5.1",
+    "cordova-plugin-pedometer": "0.4.1"
 }
 // BOTTOM OF METADATA
 });

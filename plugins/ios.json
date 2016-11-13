@@ -27,6 +27,9 @@
         },
         "com.telerik.plugins.healthkit": {
             "PACKAGE_NAME": "io.ionic.starter"
+        },
+        "cordova-plugin-pedometer": {
+            "PACKAGE_NAME": "com.ionicframework.ransome697063"
         }
     },
     "dependent_plugins": {}

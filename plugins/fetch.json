@@ -55,5 +55,13 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-pedometer": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-pedometer"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
