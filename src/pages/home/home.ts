@@ -3,6 +3,9 @@ import { GroupActionPage } from '../groupaction/groupaction';
 import { NavController } from 'ionic-angular';
 // import { ProgressBar } from 'progressbar.js';
 
+
+
+declare var cordova;
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
@@ -15,6 +18,9 @@ export class HomePage {
    @ViewChild('groupStatus') groupStatus: ElementRef;
 
   constructor(public navCtrl: NavController) {
+      setTimeout(() => {
+        this.checkGoals();
+      }, 10000);
   }
 
   ngOnInit() {
@@ -30,6 +36,7 @@ export class HomePage {
 
   checkGoals() {
     // Get list of goals you have
+    console.log('Check goals');
    var successHandler = function (pedometerData) {
         console.log(pedometerData.numberOfSteps);
         console.log(pedometerData.distance);
@@ -38,7 +45,8 @@ export class HomePage {
         "startDate": new Date("Fri May 01 2015 15:20:00"),
         "endDate": new Date("Fri May 01 2015 15:25:00")
     };
-    //pedometer.queryData(successHandler, options); 
+    //window.plugins.pedometer.queryData(successHandler, options); 
+    console.log('after querying pedometer');
 
   }
 

@@ -3,7 +3,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, ModalController, AlertController } from 'ionic-angular';
 
 import { GroupCreateModalPage } from '../groupcreatemodal/groupcreatemodal';
-import { TabsPage } from '../
+import { TabsPage } from '../tabs/tabs';
+
+import axios from 'axios';
 
 @Component({
   selector: 'page-groupaction',
@@ -15,16 +17,17 @@ export class GroupActionPage {
     groupName;
 
     constructor(public navCtrl: NavController, private navParams: NavParams, public view: ViewController, public modalCtrl: ModalController, public alertCtrl: AlertController ) {
-
     }
 
     joinExistingGroup() {
 
+        var config = { 'headers': {'Token': window.localStorage.getItem( 'auth-token' )}};
+        
 
         // Query backend with GET for group with this.groupName
         axios.post('http://10.67.48.90:8000/join', {
-            group_id: this.group_id);
-        })
+            group_id: 'testing'
+        }, config)
         .then(function (response) {
             console.log(response);
             console.log('Pushing new page on');
