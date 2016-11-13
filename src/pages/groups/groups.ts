@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
+import { GroupDetailsPage } from '../groupdetails/groupdetails';
 
 @Component({
   selector: 'page-groups',
@@ -39,4 +40,8 @@ export class GroupsPage {
         }
       }
 
+    selectGroup(groupName)
+    {
+	this.navCtrl.push(GroupDetailsPage, { header: groupName});
+    }
 }

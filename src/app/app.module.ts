@@ -12,6 +12,7 @@ import { LoginPage } from '../pages/login/login';
 import { LandingPage } from '../pages/landing/landing';
 import { NotificationPage } from '../pages/notification/notification';
 import { GroupsPage } from '../pages/groups/groups';
+import { GroupDetailsPage } from '../pages/groupdetails/groupdetails';
 import { MaterialModule } from '@angular/material';
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MaterialModule } from '@angular/material';
     LandingPage,
     GroupCreateModalPage,
     NotificationPage,
-    GroupsPage
+    GroupsPage,
+    GroupDetailsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -46,7 +48,8 @@ import { MaterialModule } from '@angular/material';
     GroupCreateModalPage,
     NotificationPage,
     GroupsPage,
-    TabsPage
+    TabsPage,
+    GroupDetailsPage
   ],
   providers: []
 })
