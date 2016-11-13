@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, ViewController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import axios from 'axios';
+import {Device} from 'ionic-native';
+import {Platform} from 'ionic-angular';
+
 
 /*
    Generated class for the Groupcreatemodal page.
@@ -30,7 +33,7 @@ export class GroupCreateModalPage {
 		var uuid;
 		var token;
 
-		console.log(device.uuid);
+		console.log(Device.device.uuid);
 		this.storage.get('authToken').then((value) => {
 				console.log('Value from storage: ' + value);
 				token = value;});
