@@ -42,7 +42,7 @@ export class RegistrationPage {
         	'zipcode': this.zipcode, 
         	'password': this.password}; 
 
-   let url = "http://10.67.48.90:8000/";
+   let url = "http://10.67.48.90:8000/user";
 
    console.log("Should be posting a request\n");
 
