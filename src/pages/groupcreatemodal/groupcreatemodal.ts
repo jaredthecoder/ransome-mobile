@@ -39,7 +39,7 @@ export class GroupCreateModalPage {
                 let url = "http://get-ranso.me/group";
 
                 axios.post(url, uuidRequest, config).then(function(response) {
-                    let postData = { 'group_id': reponse.data.uuid,
+                    let postData = { 'group_id': response.data.uuid,
                         'ransom': this.ransom,
                         'steps': this.goalValue,
                         'start': this.goalStart,
