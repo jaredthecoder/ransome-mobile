@@ -9,7 +9,15 @@ import { NavController } from 'ionic-angular';
 export class ProfilePage {
 
   constructor(public navCtrl: NavController) {
-
   }
+
+  getBalance() {
+    // Fetch balance from server
+  }
+
+  ngOnInit() {
+    this.getBalance();
+  }
+
 
 }

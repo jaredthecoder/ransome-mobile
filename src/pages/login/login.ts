@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 
 import { TabsPage } from '../tabs/tabs';
 
+import axios from 'axios';
+
 /*
   Generated class for the Login page.
 
@@ -15,6 +17,9 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
+  email;
+  password;
+
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
@@ -22,7 +27,15 @@ export class LoginPage {
   }
 
     login() {
-        // Login user to server
+        axios.post('http://10.67.48.90:8000', {
+            email: this.email,
+            password: this.password
+        })
+        .then(function (response) {
+            console.log(response);
+            window.localStorage.setItem( 'authToken', response.token);
+            window.localStorage.setItem( 'userUUID', response.uuid);
+        })
         this.navCtrl.push(TabsPage);
     }
 
