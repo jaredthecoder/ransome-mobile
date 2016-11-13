@@ -15,7 +15,7 @@ templateUrl: 'groupcreatemodal.html'
 })
 export class GroupCreateModalPage {
 
-	groupName; groupValue; groupStart; groupEnd; ransom;
+	groupName; goalValue; goalStart; goalEnd; ransom;
 
 	constructor(public navCtrl: NavController, public viewCtrl: ViewController, public storage: Storage) {}
 
@@ -42,9 +42,9 @@ export class GroupCreateModalPage {
 
 		let data = { 'group_id': uuid,
 			'ransom': this.ransom,
-			'steps': this.groupValue,
-			'start': this.groupStart,
-			'end': this.groupEnd };
+			'steps': this.goalValue,
+			'start': this.goalStart,
+			'end': this.goalEnd };
 
 		axios.post(url, data, config);
 
