@@ -12,6 +12,7 @@ import { LoginPage } from '../pages/login/login';
 import { LandingPage } from '../pages/landing/landing';
 import { NotificationPage } from '../pages/notification/notification';
 import { GroupsPage } from '../pages/groups/groups';
+import { MaterialModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { GroupsPage } from '../pages/groups/groups';
     GroupsPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    MaterialModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
