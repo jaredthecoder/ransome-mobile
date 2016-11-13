@@ -31,13 +31,26 @@ export class GroupActionPage {
         var config = { 'headers': {'Token': token}};
 
         // Query backend with GET for group with this.groupName
-        axios.post('http://10.67.48.90:8000/join', {
-            group_id: 'testing'
-        }, config)
+        axios.get('http://10.67.48.90:8000/groups/' + this.groupName, config)
         .then(function (response) {
-            console.log(response);
-            console.log('Pushing new page on');
-            this.navCtrl.push(TabsPage);
+            axios.post('http://10.67.48.90:8000/join', {
+                group_id: response.data.group_id
+            }, config)
+            .then(function (response) {
+                console.log(response);
+                console.log('Pushing new page on');
+                this.navCtrl.push(TabsPage);
+            }.bind(this))
+            .catch(function (error) {
+                console.log('Throwing error');
+                console.log(error);
+                let alertUser = this.alertCtrl.create({
+                  title: 'Uh-Oh!',
+                  subTitle: 'We messed up. Please try again later.',
+                  buttons: ['OK']
+                });
+                alertUser.present();
+            }.bind(this));
         }.bind(this))
         .catch(function (error) {
             console.log('Throwing error');
@@ -49,6 +62,7 @@ export class GroupActionPage {
             });
             alertUser.present();
         }.bind(this));
+
     }
 
     createGroup() {
