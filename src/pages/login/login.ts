@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
 import { TabsPage } from '../tabs/tabs';
+import { Storage } from '@ionic/storage';
 
 import axios from 'axios';
 
@@ -23,7 +24,7 @@ export class LoginPage {
   errorMessage;
   alertUser;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public storage: Storage) {
 
     }
 
@@ -41,8 +42,11 @@ export class LoginPage {
         })
         .then(function (response) {
             console.log(response);
-            window.localStorage.setItem( 'authToken', response.data.token);
-            window.localStorage.setItem( 'userUUID', response.data.uuid);
+            this.storage.set('authToken', response.data.token);
+            this.storage.set('userUUID', response.data.uuid);
+            this.storage.get('authToken').then((value) => {
+                console.log('Value from storage: ' + value);
+            });
             console.log('Pushing new page on');
             this.navCtrl.push(TabsPage);
         }.bind(this))
