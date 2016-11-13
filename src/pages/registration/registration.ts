@@ -1,8 +1,7 @@
-import {Injectable}     from '@angular/core';
-import {Http, Response, URLSearchParams} from '@angular/http';
+import {Http} from '@angular/http';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import 'rxjs/Rx';
+import axios from 'axios';
 
 /*
   Generated class for the Registration page.
@@ -24,6 +23,7 @@ export class RegistrationPage {
    state;
    zipcode;
    password;
+   data;
 
   constructor(public navCtrl: NavController, public http: Http) {}
 
@@ -33,20 +33,20 @@ export class RegistrationPage {
 
   register()
   {
-    let params: URLSearchParams = new URLSearchParams();
-        params.set('first_name', this.first_name);
-        params.set('last_name', this.last_name);
-        params.set('email', this.email); 
-        params.set('address', this.address); 
-        params.set('city', this.city); 
-        params.set('state', this.state); 
-        params.set('zipcode', this.zipcode); 
-        params.set('password', this.password); 
+        this.data = {'first_name': this.first_name,
+        	'last_name': this.last_name,
+        	'email': this.email,
+        	'address': this.address, 
+        	'city': this.city,
+        	'state': this.state, 
+        	'zipcode': this.zipcode, 
+        	'password': this.password}; 
 
-   let url = "http://10.67.48.90:8000/";
+   let url = "http://10.67.48.90:8000/user";
 
-   return this.http.post(url, { search: params })
-            .map(res => res.json())
+   console.log("Should be posting a request\n");
+
+   axios.post(url, this.data).then((res) => {console.log(res)});
   }
 
 }
