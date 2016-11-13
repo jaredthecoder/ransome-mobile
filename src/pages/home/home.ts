@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { GroupActionPage } from '../groupaction/groupaction';
 import { Platform, NavController } from 'ionic-angular';
+import axios from 'axios';
 // import { ProgressBar } from 'progressbar.js';
 
 
@@ -29,15 +30,21 @@ export class HomePage {
     // If not in a group then say you're not in a group, take to join a group
 
     this.groupName.nativeElement.innerHTML = 'CS Peeps';
-    this.groupStatus.nativeElement.innerHTML = '10' + '/' + '20';
+    this.groupStatus.nativeElement.innerHTML = '0' + '/' + '20';
+    
+    var successHandler = function (pedometerData) {
+	this.groupStatus.nativeElement.innerHTML = pedometerData + '/' + '20';
+    }
+    pedometer.startPedometerUpdates(successHandler, onError);
+    
     console.log('Testing!');
   }
 
 
   checkGoals() {
     // Get list of goals you have
-        this.platform.ready().then(() => {
-                console.log('Check goals');
+	this.platform.ready().then(() => {
+		console.log('Check goals');
 
                var successHandler = function (pedometerData) {
                     console.log(pedometerData.numberOfSteps);
@@ -47,7 +54,7 @@ export class HomePage {
                     "startDate": new Date("Fri Nov 11 2016 15:20:00"),
                     "endDate": new Date("Sat Nov 12 2016 15:25:00")
                 };
-                //Pedometer.queryData(successHandler, options); 
+                Pedometer.queryData(successHandler, options); 
                 console.log('after querying pedometer');
         });
   }
