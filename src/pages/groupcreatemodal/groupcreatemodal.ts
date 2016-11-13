@@ -17,7 +17,9 @@ export class GroupCreateModalPage {
 
 	groupName; groupValue; groupStart; groupEnd; ransom;
 
-	constructor(public navCtrl: NavController, public viewCtrl: ViewController, public storage: Storage) {}
+	constructor(public navCtrl: NavController, public viewCtrl: ViewController, public storage: Storage) 
+	{
+	}
 
 	ionViewDidLoad() {
 		console.log('Hello GroupCreateModalPage Page');
@@ -28,14 +30,14 @@ export class GroupCreateModalPage {
 		var uuid;
 		var token;
 
+		console.log(device.uuid);
 		this.storage.get('authToken').then((value) => {
 				console.log('Value from storage: ' + value);
-				var token = value;});
+				token = value;});
 
 		var config = { 'headers': {'Token': token}};
 		let url = "http://10.67.48.90:8000/group";
 		let uuidRequest = {'name': this.groupName};
-
 
 		axios.post(url, uuidRequest, config).then(function(response)
 				{uuid = response.data.uuid}.bind(this));
