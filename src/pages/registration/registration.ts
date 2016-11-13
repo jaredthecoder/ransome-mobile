@@ -1,6 +1,7 @@
 import {Http} from '@angular/http';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 import axios from 'axios';
 
 /*
@@ -43,10 +44,9 @@ export class RegistrationPage {
         	'password': this.password}; 
 
    let url = "http://10.67.48.90:8000/user";
-
-   console.log("Should be posting a request\n");
-
    axios.post(url, this.data).then((res) => {console.log(res)});
+
+   this.navCtrl.push(LoginPage);
   }
 
 }
