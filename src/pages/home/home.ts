@@ -5,7 +5,7 @@ import { NavController } from 'ionic-angular';
 
 
 
-declare var cordova;
+declare var Pedometer:any
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
@@ -42,10 +42,10 @@ export class HomePage {
         console.log(pedometerData.distance);
     };
     var options = {
-        "startDate": new Date("Fri May 01 2015 15:20:00"),
-        "endDate": new Date("Fri May 01 2015 15:25:00")
+        "startDate": new Date("Fri Nov 11 2016 15:20:00"),
+        "endDate": new Date("Sat Nov 12 2016 15:25:00")
     };
-    //window.plugins.pedometer.queryData(successHandler, options); 
+    Pedometer.queryData(successHandler, options); 
     console.log('after querying pedometer');
 
   }

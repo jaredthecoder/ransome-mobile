@@ -41,12 +41,8 @@ export class LoginPage {
             password: this.password
         })
         .then(function (response) {
-            console.log(response);
             this.storage.set('authToken', response.data.token);
             this.storage.set('userUUID', response.data.uuid);
-            this.storage.get('authToken').then((value) => {
-                console.log('Value from storage: ' + value);
-            });
             console.log('Pushing new page on');
             this.navCtrl.push(TabsPage);
         }.bind(this))
