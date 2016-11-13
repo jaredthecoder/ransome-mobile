@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
 import { TabsPage } from '../tabs/tabs';
-import { Storage } from '@ionic/storage';
+import { NativeStorage } from 'ionic-native';
 
 import axios from 'axios';
 
@@ -24,7 +24,7 @@ export class LoginPage {
   errorMessage;
   alertUser;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public storage: Storage) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
 
     }
 
@@ -41,20 +41,18 @@ export class LoginPage {
             password: this.password
         })
         .then(function (response) {
-            this.storage.set('authToken', response.data.token);
-            this.storage.set('userUUID', response.data.uuid);
+            NativeStorage.setItem('authToken', {authToken: response.data.token})
+              .then(
+                () => console.log('Stored token!'),
+                error => console.error('Error storing item', error)
+              );
+            NativeStorage.setItem('userUUID', {authToken: response.data.uuid})
+              .then(
+                () => console.log('Stored user uuid!'),
+                error => console.error('Error storing item', error)
+              );
             console.log('Pushing new page on');
             this.navCtrl.push(TabsPage);
         }.bind(this));
-        /*.catch(function (error) {
-            console.log('Throwing error');
-            console.log(error);
-            let alertUser = this.alertCtrl.create({
-              title: 'Wrong Password or Email!',
-              subTitle: 'Try again with a valid password or email address.',
-              buttons: ['Try Again']
-            });
-            alertUser.present();
-        }.bind(this));*/
     }
 }

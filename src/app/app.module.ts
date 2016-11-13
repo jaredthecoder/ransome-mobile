@@ -14,7 +14,6 @@ import { LandingPage } from '../pages/landing/landing';
 import { NotificationPage } from '../pages/notification/notification';
 import { GroupDetailsPage } from '../pages/groupdetails/groupdetails';
 import { MaterialModule } from '@angular/material';
-import { Storage } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -52,6 +51,6 @@ import { Storage } from '@ionic/storage';
     TabsPage,
     GroupDetailsPage
   ],
-  providers: [Storage]
+  providers: []
 })
 export class AppModule {}

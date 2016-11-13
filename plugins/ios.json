@@ -30,6 +30,12 @@
         },
         "cordova-plugin-pedometer": {
             "PACKAGE_NAME": "com.ionicframework.ransome697063"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.ionicframework.ransome697063"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "com.ionicframework.ransome697063"
         }
     },
     "dependent_plugins": {}
