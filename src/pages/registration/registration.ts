@@ -43,7 +43,7 @@ export class RegistrationPage {
         	'zipcode': this.zipcode, 
         	'password': this.password}; 
 
-   let url = "http://get-ranso.me/registration";
+   let url = "http://get-ranso.me/user";
    axios.post(url, this.data).then((res) => {console.log(res)});
 
    this.navCtrl.push(LoginPage);
