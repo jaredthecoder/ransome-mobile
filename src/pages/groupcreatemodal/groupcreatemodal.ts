@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, ViewController } from 'ionic-angular';
 import { NativeStorage } from 'ionic-native';
 import axios from 'axios';
+import {Device} from 'ionic-native';
+import {Platform} from 'ionic-angular';
+
 
 /*
    Generated class for the Groupcreatemodal page.
@@ -32,23 +35,21 @@ export class GroupCreateModalPage {
         NativeStorage.getItem('authToken')
           .then(
             data => {
-                var config = { 'headers': {'Token': token}};
-                let url = "http://10.67.48.90:8000/group";
+                var config = { 'headers': {'Token': data.authToken}};
+                let url = "http://get-ranso.me/group";
 
+                axios.post(url, uuidRequest, config).then(function(response) {
+                    let postData = { 'group_id': reponse.data.uuid,
+                        'ransom': this.ransom,
+                        'steps': this.goalValue,
+                        'start': this.goalStart,
+                        'end': this.goalEnd };
 
-                axios.post(url, uuidRequest, config).then(function(response)
-                        {uuid = response.data.uuid}.bind(this));
-
-                let postData = { 'group_id': uuid,
-                    'ransom': this.ransom,
-                    'steps': this.goalValue,
-                    'start': this.goalStart,
-                    'end': this.goalEnd };
-
-                axios.post(url, postData, config);
+                    axios.post(url, postData, config);
+                });
             },
             error => console.error(error)
-          );
+        );
 		this.viewCtrl.dismiss();
 	}
 
