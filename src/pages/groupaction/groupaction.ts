@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NavController, NavParams, ViewController, ModalController, AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 import { GroupCreateModalPage } from '../groupcreatemodal/groupcreatemodal';
 import { TabsPage } from '../tabs/tabs';
@@ -16,13 +17,18 @@ export class GroupActionPage {
 
     groupName;
 
-    constructor(public navCtrl: NavController, private navParams: NavParams, public view: ViewController, public modalCtrl: ModalController, public alertCtrl: AlertController ) {
+    constructor(public navCtrl: NavController, private navParams: NavParams, public view: ViewController, public modalCtrl: ModalController, public alertCtrl: AlertController, public storage: Storage) {
     }
 
     joinExistingGroup() {
 
-        var config = { 'headers': {'Token': window.localStorage.getItem( 'auth-token' )}};
-        
+        var token;
+        this.storage.get('authToken').then((value) => {
+            console.log('Value from storage: ' + value);
+            token = value;
+        });
+
+        var config = { 'headers': {'Token': token}};
 
         // Query backend with GET for group with this.groupName
         axios.post('http://10.67.48.90:8000/join', {
