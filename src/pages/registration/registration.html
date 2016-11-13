@@ -14,25 +14,46 @@
 
 
 <ion-content padding>
+ 
+ <ion-item>
+    <ion-label color="primary" fixed>First Name</ion-label>
+    <ion-input type="text" placeholder="John" [(ngModel)]="first_name" ></ion-input>
+  </ion-item>
+
+ <ion-item>
+    <ion-label color="primary" fixed>Last Name</ion-label>
+    <ion-input type="text" placeholder="Smith" [(ngModel)]="last_name"></ion-input>
+  </ion-item>
+
  <ion-item>
     <ion-label color="primary" fixed>Email</ion-label>
-    <ion-input type="email" placeholder="johnsmith@get-ranso.me"></ion-input>
-  </ion-item>
-
- <ion-item>
-    <ion-label color="primary" fixed>Password</ion-label>
-    <ion-input type="password" placeholder="Password"></ion-input>
-  </ion-item>
-
- <ion-item>
-    <ion-label color="primary" fixed>Name</ion-label>
-    <ion-input type="text" placeholder="John Smith"></ion-input>
+    <ion-input type="email" placeholder="johnsmith@get-ranso.me" [(ngModel)]="email"></ion-input>
   </ion-item>
 
  <ion-item>
     <ion-label color="primary" fixed>Address</ion-label>
-    <ion-input type="text" placeholder="123 Ransome Street, Nashville, TN 37203"></ion-input>
+    <ion-input type="text" placeholder="123 Ransome Street" [(ngModel)]="address"></ion-input>
   </ion-item>
 
- <button ion-button>Register</button>
+ <ion-item>
+    <ion-label color="primary" fixed>City</ion-label>
+    <ion-input type="text" placeholder="Knoxville" [(ngModel)]="city"></ion-input>
+  </ion-item>
+
+ <ion-item>
+    <ion-label color="primary" fixed>State</ion-label>
+    <ion-input type="text" placeholder="Tennessee" [(ngModel)]="state"></ion-input>
+  </ion-item>
+ 
+ <ion-item>
+    <ion-label color="primary" fixed>Zip Code</ion-label>
+    <ion-input type="text" placeholder="37916" [(ngModel)]="zipcode"></ion-input>
+  </ion-item>
+
+ <ion-item>
+    <ion-label color="primary" fixed>Password</ion-label>
+    <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+ <button ion-button (click)="register()">Register</button>
 </ion-content>

@@ -19,9 +19,29 @@
 </ion-header>
 
 <ion-content>
+
  <ion-item>
     <ion-label color="primary" fixed>Group Name</ion-label>
     <ion-input type="text" placeholder="Coworker Lunch Bunch" [(ngModel)]="groupName"></ion-input>
+  </ion-item>
+
+ <ion-item>
+  <ion-label color="primary" fixed>Goal</ion-label>
+  </ion-item>
+
+ <ion-item>
+    <ion-label color="primary" fixed>Steps</ion-label>
+    <ion-input type="number" placeholder=1000 [(ngModel)]="goalValue"></ion-input>
+  </ion-item>
+
+ <ion-item>
+    <ion-label color="primary" fixed>Start</ion-label>
+    <ion-datetime displayFormat="YYYY-MM-DD HH:mm" [(ngModel)]="goalStart"></ion-datetime>
+  </ion-item>
+
+ <ion-item>
+    <ion-label color="primary" fixed>End</ion-label>
+    <ion-datetime displayFormat="YYYY-MM-DD HH:mm" [(ngModel)]="goalEnd"></ion-datetime>
   </ion-item>
 
     <div padding>
