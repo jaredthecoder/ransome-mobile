@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { GoalsPage } from '../pages/goals/goals';
+import { GroupsPage } from '../pages/groups/groups';
 import { ProfilePage } from '../pages/profile/profile';
 import { HomePage } from '../pages/home/home';
 import { GroupActionPage } from '../pages/groupaction/groupaction';
@@ -11,7 +12,6 @@ import { RegistrationPage } from '../pages/registration/registration';
 import { LoginPage } from '../pages/login/login';
 import { LandingPage } from '../pages/landing/landing';
 import { NotificationPage } from '../pages/notification/notification';
-import { GroupsPage } from '../pages/groups/groups';
 import { GroupDetailsPage } from '../pages/groupdetails/groupdetails';
 import { MaterialModule } from '@angular/material';
 
