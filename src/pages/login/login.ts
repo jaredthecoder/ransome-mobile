@@ -36,7 +36,7 @@ export class LoginPage {
         console.log(this.email);
         console.log(this.password);
 
-        axios.post('http://10.67.48.90:8000/login', {
+        axios.post('http://get-ranso.me/login', {
             email: this.email,
             password: this.password
         })

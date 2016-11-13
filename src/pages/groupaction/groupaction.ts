@@ -31,9 +31,9 @@ export class GroupActionPage {
         var config = { 'headers': {'Token': token}};
 
         // Query backend with GET for group with this.groupName
-        axios.get('http://10.67.48.90:8000/groups/' + this.groupName, config)
+        axios.get('http://get-ranso.me/groups' + this.groupName, config)
         .then(function (response) {
-            axios.post('http://10.67.48.90:8000/join', {
+            axios.post('http://get-ranso.me/join', {
                 group_id: response.data.group_id
             }, config)
             .then(function (response) {
