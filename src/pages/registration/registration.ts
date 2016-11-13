@@ -1,6 +1,7 @@
 import {Http} from '@angular/http';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import axios from 'axios';
 
 /*
   Generated class for the Registration page.
@@ -41,13 +42,11 @@ export class RegistrationPage {
         	'zipcode': this.zipcode, 
         	'password': this.password}; 
 
-   let url = "10.67.48.90:8000";
+   let url = "http://10.67.48.90:8000/";
 
    console.log("Should be posting a request\n");
 
-   console.log(this.http.post(url, this.data).map(res => res.json()));
-   console.log(this.http.get("http://10.67.48.90:8000/").map(res => res.json()));
-   console.log("After post\n");
+   axios.post(url, this.data).then((res) => {console.log(res)});
   }
 
 }
